@@ -222,6 +222,7 @@ public class PlateCenter extends Subsystem {
                 mBeltTalon.set(ControlMode.PercentOutput,Constants.kPlateCenterCenteringSpeed);
                 centeringState=CenteringState.SENSE;
             }
+            break;
             case SENSE:
                 if(!getLidar()){
                     stopMotor();
@@ -234,7 +235,7 @@ public class PlateCenter extends Subsystem {
                     centeringState = CenteringState.DONE;
                     plateCentered=false;
                 }
-            
+            break;
         }
 
         if(mWantedState!=SystemState.CENTERING){
