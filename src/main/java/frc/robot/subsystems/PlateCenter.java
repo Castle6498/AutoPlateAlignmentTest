@@ -223,7 +223,7 @@ public class PlateCenter extends Subsystem {
                 centeringState=CenteringState.SENSE;
             }
             case SENSE:
-                if(getLidar()){
+                if(!getLidar()){
                     stopMotor();
                     inchesToCenter = getPosition() - Constants.kPlateCenterTalonSoftLimit/2; 
                     System.out.println("centered succesfully, inches to center: "+inchesToCenter);
